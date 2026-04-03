@@ -1,4 +1,4 @@
-/* Stored Procedure: This script contains a stored procedure that loads data from the
+/* Stored Procedure: This SQL script contains a stored procedure that loads data from the
 source CSV files into the bronze layer, truncating the tables before loading data.
 */
 
