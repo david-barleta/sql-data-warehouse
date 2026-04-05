@@ -2,6 +2,8 @@
 DDL Script: This SQL script creates views in the gold layer, dropping views if they already exist.
 */
 
+-- Create customers dimension table
+
 IF OBJECT_ID('gold.dim_customers', 'V') IS NOT NULL
 	DROP VIEW gold.dim_customers;
 GO
@@ -28,6 +30,8 @@ LEFT JOIN silver.erp_loc_a101 AS la
 	ON ci.cst_key = la.cid;
 GO
 
+-- Create products dimension table
+
 IF OBJECT_ID('gold.dim_products', 'V') IS NOT NULL
 	DROP VIEW gold.dim_products;
 GO
@@ -50,6 +54,8 @@ LEFT JOIN silver.erp_px_cat_g1v2 AS pc
 	ON pn.cat_id = pc.id
 WHERE pn.prd_end_dt IS NULL;
 GO
+
+-- Create sales fact table 
 
 IF OBJECT_ID('gold.fact_sales', 'V') IS NOT NULL
 	DROP VIEW gold.fact_sales;
