@@ -15,6 +15,8 @@ Data flows through three layers:
 | **Gold**   | Business-ready semantic model structured as a star schema, built as SQL views.                                                                 |
 
 ## Data Model
+![Data Model](assets/data_model.png)
+
 The gold layer is structured a star schema with three (3) tables:
 - `gold.fact_sales`: transactional sales data at the order line item level.
 - `gold.dim_customers`: customer identity and demographics.
@@ -44,6 +46,7 @@ sql-data-warehouse/
 │
 ├── assets/
 │   └── data_architecture.png       → Architecture diagram
+│   └── data_model.png              → Star schema data model diagram
 │
 ├── data/
 │   ├── source_crm/                 → CRM source files (CSV)
